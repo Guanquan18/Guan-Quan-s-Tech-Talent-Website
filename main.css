@@ -408,7 +408,7 @@ a:hover{
 .projects-content-container .project-card {
     width: 45%;
     height: 550px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 12px;
     background-color: white;
     display: flex;
@@ -489,6 +489,7 @@ a:hover{
 
 #certifications {
     height: 400px;
+    padding: 20px 20px;
 }
 
 
