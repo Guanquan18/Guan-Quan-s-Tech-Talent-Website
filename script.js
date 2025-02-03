@@ -18,5 +18,8 @@ function scrollToSection(id) {
     // Scroll to the element
     const element = document.getElementById(id);
     console.log(element);
-    element.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({
+        top: element.offsetTop - 70, // Adjust offset for fixed header
+        behavior: "smooth",
+    });
 }
