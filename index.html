@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCBC App</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://kit.fontawesome.com/cc3cb1dbea.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <article class="index-background-container">
+        <img class="index-background-image" src="../images/OCBC Building.webp" alt=""> 
+        <img class="index-background-logo" src="../images/OCBC_Logo.png" alt="">
+    </article>
+    <article class="index-content-container">
+        <section id="index-information" class="index-content-wrapper">
+            <h1><span style="font-size: 3rem;">Welcome</span><br><span style="color: #ED3F3F;">OCBC</span> Express</h1>
+            
+            <div class="row image-row">
+                <div class="col-4 text-center">
+                    <img id="check-balance-icon" class="quick-access-icon" src="../images/homepage/paynow.png" alt="PayNow" data-link="../homepage/homepage.html" style="transform: scale(1.9);">
+                    <p class="image-caption">PayNow</p>
+                </div>
+                <div class="col-4 text-center">
+                    <img id="transfer-funds" class="quick-access-icon" src="../images/homepage/transfer-money.png" alt="Transfer Funds" data-link="../transaction/transaction.html" >
+                    <p class="image-caption">Transfer Funds</p>
+                </div>
+                <div class="col-4 text-center">
+                    <img id="view-history" class="quick-access-icon" src="../images/homepage/view-history.png" alt="View Transaction History" data-link="../view-transaction-pages/view-transaction-history.html" style="transform: scale(0.9);">
+                    <p class="image-caption">View History</p>
+                </div>
+            </div>
+            <div class="row image-row">
+                <div class="col-4 text-center">
+                    <img id="paying-bills" class="quick-access-icon" src="../images/homepage/bill.png" alt="Paying Bills" data-link="../pay-bills/view-bills.html" style="transform: scale(0.9);">
+                    <p class="image-caption">Paying Bills</p>
+                </div>
+                <div class="col-4 text-center">
+                    <img id="scan-n-pay" class="quick-access-icon" src="../images/scan.png" alt="Scan & Pay" data-link="../scan-n-pay/scan.html" style="transform: scale(0.8);">
+                    <p class="image-caption">Scan & Pay</p>
+                </div>
+                <div class="col-4 text-center">
+                    <img id="chatbot" class="quick-access-icon" src="../images/chatbot-grey.png" alt="assistance" data-link="../chatbot/ibm-chatbot.html" style="transform: scale(0.9);">
+                    <p class="image-caption">Assistance</p>
+                </div>
+            </div>
+
+
+            <button class="index-login-button" onclick="showContent('index-login');hideContent('index-information');shiftIndexBackground('index-content-container')">
+                Log In to OCBC Singapore
+            </button>
+        </section>
+        
+        <section id="index-login" class="index-content-wrapper" style="display: none;">
+            <form id="index-login-form">
+                <div id="index-login-header">
+                    <a class="back-button" onclick="showContent('index-information');hideContent('index-login');shiftIndexBackground('index-content-container')">
+                        <img src="../images/back-icon.png" alt="Back">
+                    </a>
+                    <h1 class="">Online Banking App</h1>
+                </div>
+
+
+                <div style="height: 3px; background-color: #FFB570; margin: 2rem 0; width: 100%; border-radius: 15px; box-shadow: 0 0 7px #ffb57080;"></div>
+
+                <!-- Access Code input field -->
+                <div class="form-floating col-12">
+                    <input type="text" id="login-access-code" name="login-access-code" class="form-control"
+                    placeholder="Enter Access Code">
+                    <label for="login-access-code">Access Code</label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+    
+                <!-- Pin input field -->
+                <div class="form-floating col-12">
+                    <input type="password" id="login-pin" name="login-pin" class="form-control"
+                    placeholder="Enter password">
+                    <label for="login-pin">Pin</label>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+    
+                <!-- Validation Error message -->
+                <p class="" id="login-validation-error">Error Message</p>
+                
+                <!-- Login button -->
+                <button type="submit" id="login-submit" class="index-login-button">Log In</button>
+    
+                <!-- Trouble link -->
+                <div class="index-login-note">
+                    <p style="text-align: center;">Trouble Logging In?</p>
+                </div>
+            </form>
+
+        </section>
+    </article>
+    <script src="../scripts/script.js"></script>
+    <script>
+        function showContent(contentId){
+            document.getElementById(contentId).style.display = 'block';
+        }
+
+        function hideContent(contentId){
+            document.getElementById(contentId).style.display = 'none';
+        }
+
+        function shiftIndexBackground(){
+            document.getElementsByClassName('index-content-container')[0]
+            .style.background = 'linear-gradient(to top, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0.25) 100%)';
+            document.getElementsByClassName('index-background-logo')[0]
+            .style.margin = '4rem 0 0';
+            document.getElementsByClassName('index-content-container')[0]
+            .style.padding = '400px 0 0';
+        }
+        
+        IndexLoginSubmit('index-login-form');
+        // Login based on feature selection
+        document.addEventListener("DOMContentLoaded", function () {
+            const icons = document.querySelectorAll(".quick-access-icon");
+            icons.forEach(icon => {
+                icon.addEventListener("click", () => {
+                    const link = icon.getAttribute("data-link");
+
+                    if (icon.id === "chatbot") {
+                        // If the icon is the chatbot, open the link directly
+                        window.location.href = link;
+                    } else {
+                        // Otherwise, show login and hide other content
+                        showContent('index-login');
+                        hideContent('index-information');
+                        shiftIndexBackground('index-content-container');
+
+                        // Store the link in local storage
+                        sessionStorage.setItem("selectedLink", link);
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
