@@ -4,140 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCBC App</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./main.css">
     <script src="https://kit.fontawesome.com/cc3cb1dbea.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+
+
+
+    </style>
 </head>
 <body>
-    <article class="index-background-container">
-        <img class="index-background-image" src="../images/OCBC Building.webp" alt=""> 
-        <img class="index-background-logo" src="../images/OCBC_Logo.png" alt="">
-    </article>
-    <article class="index-content-container">
-        <section id="index-information" class="index-content-wrapper">
-            <h1><span style="font-size: 3rem;">Welcome</span><br><span style="color: #ED3F3F;">OCBC</span> Express</h1>
-            
-            <div class="row image-row">
-                <div class="col-4 text-center">
-                    <img id="check-balance-icon" class="quick-access-icon" src="../images/homepage/paynow.png" alt="PayNow" data-link="../homepage/homepage.html" style="transform: scale(1.9);">
-                    <p class="image-caption">PayNow</p>
-                </div>
-                <div class="col-4 text-center">
-                    <img id="transfer-funds" class="quick-access-icon" src="../images/homepage/transfer-money.png" alt="Transfer Funds" data-link="../transaction/transaction.html" >
-                    <p class="image-caption">Transfer Funds</p>
-                </div>
-                <div class="col-4 text-center">
-                    <img id="view-history" class="quick-access-icon" src="../images/homepage/view-history.png" alt="View Transaction History" data-link="../view-transaction-pages/view-transaction-history.html" style="transform: scale(0.9);">
-                    <p class="image-caption">View History</p>
+    <header class="header-container">
+        <nav>
+            <a class="logo">Guan Quan Tech Talent</a>
+            <div class="navigation-container">
+                <ul class="list-no-style">
+                    <li>
+                        <button onclick="downloadResume()" class="active">Download Resume</button>
+                    </li>
+                </ul>
+                <!-- <ul class="list-no-style">
+                    <li><a href="index.html">About Me</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul> -->
+            </div>
+        </nav>
+    </header>
+    <button onclick="topFunction()" id="back-to-top-button" ><i class="fa-solid fa-chevron-up"></i>Back to Top</button>
+
+    <article class="index-page-content-1-container">
+        <div class="content-wrapper">
+            <!-- Profile Card -->
+            <div class="profile-card">
+                <img src="./images/WhatsApp Image 2024-11-15 at 21.20.45_86ac7b9d.jpg" alt="Profile Picture" class="profile-image">
+                <h2>Guan Quan</h2>
+                <div class="profile-card-line"></div>
+                <p>
+                    Full Stack Developer & Cloud Engineer
+                    <br><br>
+                    Year 2 Information Technology Student at Ngee Ann Polytechnic
+                </p>
+
+                <div class="social-icons">
+                    <a onclick="clickLink(`https://www.linkedin.com/in/guan-quan-chang-a10972272/`)"><i class="fa-brands fa-linkedin"></i></a>
+                    <a onclick="clickLink(`https://github.com/Guanquan18`)"><i class="fa-brands fa-github"></i></a>
+                    <a onclick="clickLink(`https://www.instagram.com/guanquan18/`)"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="row image-row">
-                <div class="col-4 text-center">
-                    <img id="paying-bills" class="quick-access-icon" src="../images/homepage/bill.png" alt="Paying Bills" data-link="../pay-bills/view-bills.html" style="transform: scale(0.9);">
-                    <p class="image-caption">Paying Bills</p>
+    
+            <!-- Welcome Text Section -->
+            <div class="welcome-section">
+                <h1>Welcome</h1>
+                <p id="welcome-section-subheader">Explore my work and skills</p>
+    
+                <div class="btn-container">
+                    <a onclick="scrollToSection('skills-container')" class="welcome-button">View Skills</a>
+                    <a onclick="scrollToSection('projects-container')" class="welcome-button">My Projects</a>
                 </div>
-                <div class="col-4 text-center">
-                    <img id="scan-n-pay" class="quick-access-icon" src="../images/scan.png" alt="Scan & Pay" data-link="../scan-n-pay/scan.html" style="transform: scale(0.8);">
-                    <p class="image-caption">Scan & Pay</p>
+    
+                <p>
+                    Welcome to Guan Quan Tech Talent! I'm a website developer passionate about creating
+                    responsive and engaging web experiences. Take a look at my showcased portfolios, skills, awards,
+                    experience, projects, volunteering, and contact information. Feel free to explore and get in
+                    touch to discuss potential collaborations.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article id="about-me-container" class="about-me-container">
+        <div class="about-me-content-container">
+            <h1>About Me</h1>
+            <p>
+                I am a Full Stack Developer and Cloud Engineer with a passion for creating responsive and engaging web experiences. I have a strong foundation in web development and cloud computing, with experience in building and deploying web applications. I am proficient in front-end and back-end technologies, including HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and AWS. I am also skilled in cloud services, such as AWS, Azure, and Google Cloud Platform. I am a quick learner and a team player, with excellent communication and problem-solving skills. I am looking for opportunities to work on challenging projects and collaborate with talented professionals.
+            </p>
+        </div>
+    </article>
+
+    <article id="skills-container" class="skills-container">
+        <div class="skills-content-container">
+            <h1>Skills</h1>
+            <div class="skills-list">
+                <div class="skill">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <h2>Front-End Development</h2>
+                    <p>HTML, CSS, JavaScript, React, Bootstrap, Tailwind CSS</p>
                 </div>
-                <div class="col-4 text-center">
-                    <img id="chatbot" class="quick-access-icon" src="../images/chatbot-grey.png" alt="assistance" data-link="../chatbot/ibm-chatbot.html" style="transform: scale(0.9);">
-                    <p class="image-caption">Assistance</p>
+                <div class="skill">
+                    <i class="fa-solid fa-server"></i>
+                    <h2>Back-End Development</h2>
+                    <p>Node.js, Express, MongoDB, MySQL, RESTful APIs</p>
+                </div>
+                <div class="skill">
+                    <i class="fa-brands fa-aws"></i>
+                    <h2>Cloud Computing</h2>
+                    <p>AWS, Azure, Google Cloud Platform, Docker, Kubernetes</p>
+                </div>
+                <div class="skill">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Programming Languages</h2>
+                    <p>JavaScript, Python, Java, C++, SQL, NoSQL</p>
+                </div>
+                <div class="skill">
+                    <i class="fa-solid fa-tools"></i>
+                    <h2>Tools & Technologies</h2>
+                    <p>Git, GitHub, VS Code, Postman, Jira, Confluence</p>
+                </div>
+                <div class="skill">
+                    <i class="fa-solid fa-users"></i>
+                    <h2>Soft Skills</h2>
+                    <p>Teamwork, Communication, Problem-Solving, Time Management</p>
                 </div>
             </div>
+        </div>
 
-
-            <button class="index-login-button" onclick="showContent('index-login');hideContent('index-information');shiftIndexBackground('index-content-container')">
-                Log In to OCBC Singapore
-            </button>
-        </section>
-        
-        <section id="index-login" class="index-content-wrapper" style="display: none;">
-            <form id="index-login-form">
-                <div id="index-login-header">
-                    <a class="back-button" onclick="showContent('index-information');hideContent('index-login');shiftIndexBackground('index-content-container')">
-                        <img src="../images/back-icon.png" alt="Back">
-                    </a>
-                    <h1 class="">Online Banking App</h1>
-                </div>
-
-
-                <div style="height: 3px; background-color: #FFB570; margin: 2rem 0; width: 100%; border-radius: 15px; box-shadow: 0 0 7px #ffb57080;"></div>
-
-                <!-- Access Code input field -->
-                <div class="form-floating col-12">
-                    <input type="text" id="login-access-code" name="login-access-code" class="form-control"
-                    placeholder="Enter Access Code">
-                    <label for="login-access-code">Access Code</label>
-                    <i class="fa-solid fa-user"></i>
-                </div>
-    
-                <!-- Pin input field -->
-                <div class="form-floating col-12">
-                    <input type="password" id="login-pin" name="login-pin" class="form-control"
-                    placeholder="Enter password">
-                    <label for="login-pin">Pin</label>
-                    <i class="fa-solid fa-lock"></i>
-                </div>
-    
-                <!-- Validation Error message -->
-                <p class="" id="login-validation-error">Error Message</p>
-                
-                <!-- Login button -->
-                <button type="submit" id="login-submit" class="index-login-button">Log In</button>
-    
-                <!-- Trouble link -->
-                <div class="index-login-note">
-                    <p style="text-align: center;">Trouble Logging In?</p>
-                </div>
-            </form>
-
-        </section>
     </article>
-    <script src="../scripts/script.js"></script>
-    <script>
-        function showContent(contentId){
-            document.getElementById(contentId).style.display = 'block';
-        }
 
-        function hideContent(contentId){
-            document.getElementById(contentId).style.display = 'none';
-        }
+    <article id="projects-container" class="projects-container">
+        <div class="projects-content-container">
+            <h1>Projects</h1>
+            <div class="projects-list">
+                <div class="project-card">
+                    <div class="image-container">
+                        <img src="./images/ocbc express.png" alt="Project Image" class="project-image">
+                    </div>
+                    <h2>OCBC Express</h2>
+                    <p>A full-Stack Development project where I worked with a team of 5 members to tackle real-world challenges faced by the elders presented by OCBC.</p>
+                    <a onclick="clickLink(`https://github.com/Guanquan18/Full_Stack_Development_OCBC`)" class="btn btn-primary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="image-container">
+                        <img src="./images/spear academy.png" alt="Project Image" class="project-image">
+                    </div>                    
+                    <h2>Spear Academy</h2>
+                    <p>Worked with a team of 4 members to develop a back-end development project for a learning platform targeted at educators using technologies such as node.js, express, Microsoft SQL Server Database and MVC architecture.</p>
+                    <a onclick="clickLink(`https://github.com/Guanquan18/BED2024Apr_P05_T4`)" class="btn btn-primary">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="image-container">
+                        <img src="./images/Screenshot 2025-02-04 021228.png" alt="Project Image" class="project-image">
+                    </div>                    
+                    <h2>Ride With Us</h2>
+                    <p>A front-end development project showcasing out html, css and javascript skills to design a appealing and interactive website   for a bicycle shop.</p>
+                    <a onclick="clickLink(`https://github.com/Guanquan18/fed_s10257825_chang_guan_quan_Assg1_website`)" class="btn btn-primary">View Project</a>
+                </div>
+            </div>
+        </div>
+    </article>
 
-        function shiftIndexBackground(){
-            document.getElementsByClassName('index-content-container')[0]
-            .style.background = 'linear-gradient(to top, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0.25) 100%)';
-            document.getElementsByClassName('index-background-logo')[0]
-            .style.margin = '4rem 0 0';
-            document.getElementsByClassName('index-content-container')[0]
-            .style.padding = '400px 0 0';
-        }
+    <article class="certifications-container">
+        <div class="skills-content-container">
+            <h1>Certifications</h1>
+            <div class="skills-list">
+                <div id="certifications" class="skill">
+                    <div class="image-container">
+                        <img src="./images/image.png" alt="">
+                    </div>
+                    <h2>AWS Certified Cloud Practitioner</h2>
+                    <p>Amazon Web Services (AWS)</p>
+                    <a onclick="clickLink(`https://www.credly.com/badges/8397e57c-42a2-41b5-90e7-1850636a3bfc/linked_in_profile`);" class="btn btn-primary">View Credential</a>
+                </div>
+                <div id="certifications" class="skill">
+                    <div class="image-container">
+                        <img src="./images/image (1).png" alt="">
+                    </div>                    
+                    <h2>Professional Scrum Master™ I (PSM I)</h2>
+                    <p>Scrum.org</p>
+                    <a onclick="clickLink(`https://www.credly.com/badges/5f8290cc-a0e4-460c-80a6-736e4ffc7a22/linked_in_profile`);" class="btn btn-primary">View Credential</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    
         
-        IndexLoginSubmit('index-login-form');
-        // Login based on feature selection
-        document.addEventListener("DOMContentLoaded", function () {
-            const icons = document.querySelectorAll(".quick-access-icon");
-            icons.forEach(icon => {
-                icon.addEventListener("click", () => {
-                    const link = icon.getAttribute("data-link");
-
-                    if (icon.id === "chatbot") {
-                        // If the icon is the chatbot, open the link directly
-                        window.location.href = link;
-                    } else {
-                        // Otherwise, show login and hide other content
-                        showContent('index-login');
-                        hideContent('index-information');
-                        shiftIndexBackground('index-content-container');
-
-                        // Store the link in local storage
-                        sessionStorage.setItem("selectedLink", link);
-                    }
-                });
-            });
-        });
-
-    </script>
+    
+    <script src="./script.js"></script>
+    
 </body>
 </html>
